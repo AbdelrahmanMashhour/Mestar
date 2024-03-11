@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using RepositoryPatternWithUOW.Core.Dto;
 using RepositoryPatternWithUOW.Core.DTOs;
 using RepositoryPatternWithUOW.Core.Interfaces;
+using RepositoryPatternWithUOW.Core.Models;
+using RepositoryPatternWithUOW.EF;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace Mestar.Controllers
@@ -13,7 +15,7 @@ namespace Mestar.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-        IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork unitOfWork;
 
         public AccountsController(IUnitOfWork unitOfWork)
         {
@@ -29,6 +31,7 @@ namespace Mestar.Controllers
 
             return Ok();
         }
+        
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
@@ -51,8 +54,8 @@ namespace Mestar.Controllers
             return Ok();
 
         }
-        [HttpPost("ValidateEmailVerificationCode")]
 
+        [HttpPost("ValidateEmailVerificationCode")]
         public async Task<IActionResult> ValidateConfirmationCode(ValidationCodeDto VCD)
         {
             var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email, VCD.Code);
@@ -62,7 +65,7 @@ namespace Mestar.Controllers
             return Ok();
 
         }
-
+        [Authorize]
         [HttpPost("ValidateResetPasswordCode")]
         public async Task<IActionResult> ValidateResetPasswordCode(ValidationCodeDto VCD)
         {
@@ -73,6 +76,7 @@ namespace Mestar.Controllers
             return Ok();
 
         }
+        [Authorize]
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
         {
@@ -82,6 +86,7 @@ namespace Mestar.Controllers
             await unitOfWork.SaveChangesAsync();
             return Ok();
         }
+        [Authorize]
         [HttpPost("UpdatePassword")]
         public async Task<IActionResult> UpdatePassword(UpdatePasswordDto updatePasswordDto)
         {
@@ -94,28 +99,36 @@ namespace Mestar.Controllers
             await unitOfWork.SaveChangesAsync();
             return Ok();
         }
+
+
+        //[Authorize(Roles = "Student")]
+        [Authorize]
         [HttpPatch("UpdateInsensitveData")]
-        public async Task<IActionResult> UpdateInsensitiveData([FromBody] JsonPatchDocument<UpdateInsensitiveDataDto> patchDocument)
+        public async Task<IActionResult> UpdateInsensitiveData([FromBody] JsonPatchDocument<User> patchDocument)
         {
             string? email = ExtractEmail();
             if (email is null)
                 return BadRequest();
 
             var result = await unitOfWork.UserRepository.UpdateInsensitiveData(patchDocument, email);
-            if (!result) return BadRequest();
+            if (!result)
+                return BadRequest();
+            try
+            {
             await unitOfWork.SaveChangesAsync();
+            }
+            catch
+            {
+                return BadRequest();
+            }
             return Ok();
         }
+        //[Authorize(Roles = "Student")]
+        //[Authorize]
         [HttpPost("UpdatePicture")]
         public async Task<IActionResult> UpdateProfilePicture([FromForm] IFormFile newPicture)
         {
 
-            /*
-             
-             eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
-            eyJqdGkiOiJiMDhjMzdhMy0zMWZkLTRiNjgtOGM0OS03Y2UyZTM4MjJjNGYiLCJlbWFpbCI6IkFkbWluQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJQYXJlbnQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTcwOTg3NzM2MiwiaXNzIjoiTWFzdGVyL0JhY2tFbmQiLCJhdWQiOiJNYXN0ZXIvRnJvbnRFbmQifQ
-            .zu-Zo31IHvy7ZSiBWzEiJOB1U8d3NcRjJV4dlrdyF18
-             */
             var email = ExtractEmail();
 
             var result = await unitOfWork.UserRepository.UpdateProfilePicture(new() { NewPicture = newPicture, Email = email });
@@ -130,7 +143,8 @@ namespace Mestar.Controllers
         private string ExtractEmail()
         {
             // Retrieve the JWT token from the request headers
-            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Replace("Bearer ", "");
+            var test = HttpContext.Request.Headers["Authorization"].FirstOrDefault();
+            var token=test?.Replace("Bearer ", "");
 
             // Parse the JWT token
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -145,6 +159,7 @@ namespace Mestar.Controllers
             }
             return email;
         }
+
         [HttpPost("UpdateTokens")]
         public async Task<IActionResult> UpdateTokens(UpdateTokensDto updateTokenDto)
         {
@@ -152,7 +167,7 @@ namespace Mestar.Controllers
             {
                 var result = await unitOfWork.UserRepository.UpdateTokens(updateTokenDto);
                 await unitOfWork.SaveChangesAsync();
-                if (result.Success)
+                if (!result.Success)
                 {
                     return Unauthorized();
                 }
@@ -166,7 +181,7 @@ namespace Mestar.Controllers
 
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpDelete("SignOut")]
         public async Task<IActionResult> SignOut([FromBody] string refreshToken)
         {
@@ -179,5 +194,7 @@ namespace Mestar.Controllers
             return Ok();
 
         }
+
+        
     }
 }

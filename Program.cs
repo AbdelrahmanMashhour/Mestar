@@ -26,7 +26,12 @@ builder.Services.AddTransient<ISenderService, MailService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddCors();
+builder.Services.AddCors(option => {
+    option.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.AllowAnyHeader().AllowCredentials().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200");
+    });
+});
 var JwtSettings = builder.Configuration.GetSection("JWT").Get<TokenOptionsPattern>();
 builder.Services.AddSingleton(JwtSettings!);
 builder.Services.AddAuthentication(opts =>
@@ -92,11 +97,11 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 
 app.UseAuthentication();
