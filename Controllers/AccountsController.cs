@@ -65,7 +65,7 @@ namespace Mestar.Controllers
             return Ok();
 
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost("ValidateResetPasswordCode")]
         public async Task<IActionResult> ValidateResetPasswordCode(ValidationCodeDto VCD)
         {
@@ -76,6 +76,8 @@ namespace Mestar.Controllers
             return Ok();
 
         }
+
+
         [Authorize]
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
@@ -86,6 +88,8 @@ namespace Mestar.Controllers
             await unitOfWork.SaveChangesAsync();
             return Ok();
         }
+
+
         [Authorize]
         [HttpPost("UpdatePassword")]
         public async Task<IActionResult> UpdatePassword(UpdatePasswordDto updatePasswordDto)
@@ -101,8 +105,8 @@ namespace Mestar.Controllers
         }
 
 
-        //[Authorize(Roles = "Student")]
-        [Authorize]
+        [Authorize(Roles = "Student")]
+        //[Authorize]
         [HttpPatch("UpdateInsensitveData")]
         public async Task<IActionResult> UpdateInsensitiveData([FromBody] JsonPatchDocument<User> patchDocument)
         {
@@ -123,8 +127,10 @@ namespace Mestar.Controllers
             }
             return Ok();
         }
+
+
         //[Authorize(Roles = "Student")]
-        //[Authorize]
+        [Authorize]
         [HttpPost("UpdatePicture")]
         public async Task<IActionResult> UpdateProfilePicture([FromForm] IFormFile newPicture)
         {

@@ -29,7 +29,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(option => {
     option.AddPolicy("CorsPolicy", builder =>
     {
-        builder.AllowAnyHeader().AllowCredentials().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200");
+        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     });
 });
 var JwtSettings = builder.Configuration.GetSection("JWT").Get<TokenOptionsPattern>();
@@ -54,46 +54,15 @@ builder.Services.AddAuthentication(opts =>
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSettings.SecretKey)),
             RoleClaimType = ClaimTypes.Role,
 
-
-
-
         };
 
     });
 
-builder.Services.AddSwaggerGen(c =>
-    {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
-
-        // Add JWT Bearer token authentication support
-        var securityScheme = new OpenApiSecurityScheme
-        {
-            Name = "Authorization",
-            Description = "JWT Authorization header using the Bearer scheme",
-            In = ParameterLocation.Header,
-            Type = SecuritySchemeType.Http,
-            Scheme = "bearer",
-            BearerFormat = "JWT"
-        };
-
-        c.AddSecurityDefinition("Bearer", securityScheme);
-
-        // Add JWT token authorization header
-        c.AddSecurityRequirement(new OpenApiSecurityRequirement
-        {
-            {
-                new OpenApiSecurityScheme
-                {
-                    Reference = new OpenApiReference
-                    {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = "Bearer"
-                    }
-                },
-                new string[] { }
-            }
-        });
-    });
+builder.Services.AddSwaggerGen();
+//options =>
+//{
+//    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "api.xml"));
+//});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -103,10 +72,10 @@ var app = builder.Build();
     app.UseSwaggerUI();
 //}
 
+app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCors(x => x.AllowAnyHeader().AllowAnyOrigin().AllowAnyHeader());
 app.MapControllers();
 
 app.Run();
