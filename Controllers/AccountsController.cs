@@ -22,12 +22,6 @@ namespace Mestar.Controllers
             this.unitOfWork = unitOfWork;
         }
 
-        [HttpPost("testDeployment")]
-        public async Task<IActionResult> TestForPrinting()
-        {
-            return Content("This EndPoint For Test Deployment");
-
-        }
 
         [HttpPost("SignUp")]
         public async Task<IActionResult> SignUp(SignUpDto signUpDto)
@@ -45,18 +39,21 @@ namespace Mestar.Controllers
         {
             var result = await unitOfWork.UserRepository.LoginAsync(loginDto);
 
-            if (result.Success)
+            if (result.Success&&(result.EmailConfirmed==false))
+              return BadRequest("Your Email Not Conformed");
+
+
+            if (result.Success&&result.EmailConfirmed)
             {
-
                 await unitOfWork.SaveChangesAsync();
-                SetCookie("accessToken", result.Jwt,(DateTime) result.ExpirationOfJwt);
 
-                SetCookie("refreshToken", result.RefreshToken,(DateTime) result.ExpirationOfRefreshToken);
+                SetCookie("accessToken", result.Jwt, (DateTime)result.ExpirationOfJwt);
 
-                
-                result.RefreshToken = null;
-                result.ExpirationOfRefreshToken = null;
-                result.ExpirationOfJwt = null;
+                SetCookie("refreshToken", result.RefreshToken, (DateTime)result.ExpirationOfRefreshToken);
+
+                //result.RefreshToken = null;
+                //result.ExpirationOfRefreshToken = null;
+                //result.ExpirationOfJwt = null;
 
 
                 return Ok(result);
@@ -65,11 +62,16 @@ namespace Mestar.Controllers
         }
         private void SetCookie(string name, string value,DateTime expiresOn)
         {
+
             var cookieOptions = new CookieOptions();
-            //cookieOptions.Secure = true;
-            cookieOptions.HttpOnly = true;
-            cookieOptions.Expires = expiresOn;
-            cookieOptions.SameSite = SameSiteMode.None;
+           // cookieOptions.Secure = true;
+           cookieOptions.HttpOnly = true;
+           cookieOptions.Expires = expiresOn.ToLocalTime();
+            
+            //cookieOptions.SameSite = SameSiteMode.None;//not exit in wwwroot
+            //cookieOptions.SameSite = SameSiteMode.Strict;//wwwroot
+            
+
             Response.Cookies.Append(name, value, cookieOptions);
 
         }
@@ -160,12 +162,12 @@ namespace Mestar.Controllers
         //[Authorize(Roles = "Student")]
         [Authorize]
         [HttpPost("UpdatePicture")]
-        public async Task<IActionResult> UpdateProfilePicture([FromForm] IFormFile newPicture)
+        public async Task<IActionResult> UpdateProfilePicture([FromForm] UpdateProfilePictureDto newPicture)
         {
 
             var email = ExtractEmail();
 
-            var result = await unitOfWork.UserRepository.UpdateProfilePicture(new() { NewPicture = newPicture, Email = email });
+            var result = await unitOfWork.UserRepository.UpdateProfilePicture(new() { NewPicture = newPicture.NewPicutre, Email = email });
             if (!result) { return BadRequest(); }
             await unitOfWork.SaveChangesAsync();
             return Ok();

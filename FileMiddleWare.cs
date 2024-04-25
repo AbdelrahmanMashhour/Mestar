@@ -42,11 +42,7 @@ namespace Mestar
                         {
                             context.Response.StatusCode = 401;
 
-
-
                         }
-
-
 
                     }
                     else

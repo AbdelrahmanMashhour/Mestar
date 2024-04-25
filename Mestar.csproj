@@ -33,6 +33,7 @@
     <Folder Include="wwwroot\Assignments\Pdfs\" />
     <Folder Include="wwwroot\Assignments\Txts\" />
     <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\PersonalProfiles\" />
     <Folder Include="wwwroot\Solutions\Pdfs\" />
     <Folder Include="wwwroot\Solutions\Txts\" />
     <Folder Include="wwwroot\Videos\Pdfs\" />

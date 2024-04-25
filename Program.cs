@@ -80,6 +80,7 @@ builder.Services.AddAuthentication(opts =>
             if (a.HttpContext.Request.Cookies.TryGetValue("accessToken",out string? val))
             {
                 a.Token = val;
+                
 
             }
             return Task.CompletedTask;

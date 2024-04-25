@@ -47,15 +47,16 @@ namespace Mestar.Controllers
             return Ok(unites);
         }
 
-        //public async Task<IActionResult> AllUnitesByCourseIdForStudent(int id, int studentId)
-        //{
-        //    var unites = await unitOfWork.UniteRepository.AllUnitesByCourseId(id, studentId);
-        //    if (unites is null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(unites);
-        //}
+        [HttpGet("AllUnitesByCourseIdForStudent/{id}")]
+        public async Task<IActionResult> AllUnitesByCourseIdForStudent(int id, int studentId)
+        {
+            var unites = await unitOfWork.UniteRepository.AllUnitesByCourseId(id, studentId);
+            if (unites is null)
+            {
+                return NotFound();
+            }
+            return Ok(unites);
+        }
 
 
 
@@ -129,7 +130,7 @@ namespace Mestar.Controllers
 
 
         [HttpGet("GetGradeOfExam")]
-        public async Task<IActionResult> GetGradeOfExam(ExamDataDto dto)
+        public async Task<IActionResult> GetGradeOfExam([FromBody]ExamDataDto dto)
         {
 
             var result= await unitOfWork.SolutionRepository.GetGradeOfExam(dto);
@@ -149,13 +150,22 @@ namespace Mestar.Controllers
             return Ok(result);
         }
 
-        //[HttpGet("AssignmentsOfStudentsToAddGrade")]
-        //public async Task<IActionResult> AllAssignmentsOfStudents()
-        //{
-            
-        //}
+        [HttpGet("AssignmentsOfStudentsToAddGrade")]
+        public async Task<IActionResult> AllAssignmentsOfStudents()
+        {
 
+            var result = await unitOfWork.SolutionRepository.GetSolutionsData();
+            return Ok(result);
 
+        }
+
+        //Admine
+        [HttpGet("AllCourses")]
+        public async Task<IActionResult> AllCoures()
+        {
+            var courses = await unitOfWork.CourseRepository.AllCoursesAsync();
+            return Ok(courses);
+        }
         [HttpPost("AddCourse")]
         public async Task<IActionResult> AddCourse([FromForm]AddCourseDto dto)
         {
@@ -228,6 +238,7 @@ namespace Mestar.Controllers
         [HttpPost("AddAssignment")]
         public async Task<IActionResult> AddAssignment(AssignmentDto assignmentDto)
         {
+
             var result = await unitOfWork.AssignmentRepository.AddAssignmentAsync(assignmentDto);
             if (result)
             {
