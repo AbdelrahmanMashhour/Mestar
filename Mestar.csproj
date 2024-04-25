@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>false</InvariantGlobalization>
+	  
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +27,15 @@
   <ItemGroup>
     <ProjectReference Include="..\ReposatoryPatternWithUOW.Core\RepositoryPatternWithUOW.Core.csproj" />
     <ProjectReference Include="..\ReposatoryPatternWithUOW.EF\RepositoryPatternWithUOW.EF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Assignments\Pdfs\" />
+    <Folder Include="wwwroot\Assignments\Txts\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\Solutions\Pdfs\" />
+    <Folder Include="wwwroot\Solutions\Txts\" />
+    <Folder Include="wwwroot\Videos\Pdfs\" />
   </ItemGroup>
 
 </Project>

@@ -21,6 +21,14 @@ namespace Mestar.Controllers
         {
             this.unitOfWork = unitOfWork;
         }
+
+        [HttpPost("testDeployment")]
+        public async Task<IActionResult> TestForPrinting()
+        {
+            return Content("This EndPoint For Test Deployment");
+
+        }
+
         [HttpPost("SignUp")]
         public async Task<IActionResult> SignUp(SignUpDto signUpDto)
         {
@@ -39,10 +47,31 @@ namespace Mestar.Controllers
 
             if (result.Success)
             {
+
                 await unitOfWork.SaveChangesAsync();
+                SetCookie("accessToken", result.Jwt,(DateTime) result.ExpirationOfJwt);
+
+                SetCookie("refreshToken", result.RefreshToken,(DateTime) result.ExpirationOfRefreshToken);
+
+                
+                result.RefreshToken = null;
+                result.ExpirationOfRefreshToken = null;
+                result.ExpirationOfJwt = null;
+
+
                 return Ok(result);
             }
             return NotFound();
+        }
+        private void SetCookie(string name, string value,DateTime expiresOn)
+        {
+            var cookieOptions = new CookieOptions();
+            //cookieOptions.Secure = true;
+            cookieOptions.HttpOnly = true;
+            cookieOptions.Expires = expiresOn;
+            cookieOptions.SameSite = SameSiteMode.None;
+            Response.Cookies.Append(name, value, cookieOptions);
+
         }
         [HttpPost("SendCode")]
         public async Task<IActionResult> SendConfirmationCode(SendCodeDto sendCodeDto)
@@ -78,7 +107,6 @@ namespace Mestar.Controllers
         }
 
 
-        [Authorize]
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
         {
@@ -165,6 +193,7 @@ namespace Mestar.Controllers
             }
             return email;
         }
+
 
         [HttpPost("UpdateTokens")]
         public async Task<IActionResult> UpdateTokens(UpdateTokensDto updateTokenDto)
