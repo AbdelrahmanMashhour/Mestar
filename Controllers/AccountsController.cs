@@ -20,12 +20,14 @@ namespace Mestar.Controllers
         public AccountsController(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
+
         }
 
 
         [HttpPost("SignUp")]
         public async Task<IActionResult> SignUp(SignUpDto signUpDto)
         {
+            
             var result = await unitOfWork.UserRepository.SignUpAsync(signUpDto);
             if (!result)
                 return BadRequest();
@@ -220,15 +222,23 @@ namespace Mestar.Controllers
 
         [Authorize]
         [HttpDelete("SignOut")]
-        public async Task<IActionResult> SignOut([FromBody] string refreshToken)
+        public async Task<IActionResult> SignOut()
         {
             var email = ExtractEmail();
+            
+           if( Request.Cookies.TryGetValue("refreshToken", out string? refreshToken))
+           {
+                var result = await unitOfWork.UserRepository.SignOut(refreshToken, email);
+                if (result)
+                {
+                    await unitOfWork.SaveChangesAsync();
+                    return Ok();
+                }
+                
 
-            var result = await unitOfWork.UserRepository.SignOut(refreshToken, email);
-            if (result)
-                await unitOfWork.SaveChangesAsync();
+           }
+            return BadRequest("Can't Get Refresh_Token");
 
-            return Ok();
 
         }
 

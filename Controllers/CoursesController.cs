@@ -335,5 +335,16 @@ namespace Mestar.Controllers
                 return Ok();
             return BadRequest("Can't Delete");
         }
+
+
+        [HttpPut("UpdateUniteById/{id}")]
+        public async Task<IActionResult> UpdateUniteById(UnitDto dto,int id)
+        {
+            var result = await unitOfWork.UniteRepository.UpdateUniteAsync(dto,id);
+            await unitOfWork.SaveChangesAsync();
+            return result ? Ok() : BadRequest();
+        }
+
+
     }
 }

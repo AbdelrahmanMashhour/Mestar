@@ -72,15 +72,16 @@ builder.Services.AddAuthentication(opts =>
             RoleClaimType = ClaimTypes.Role,
 
         };
-        //this part tell user that send token in cookies
+        ////this part tell user that send token in cookies
+
         opts.Events = new JwtBearerEvents()
         {
             OnMessageReceived = a =>
         {
-            if (a.HttpContext.Request.Cookies.TryGetValue("accessToken",out string? val))
+            if (a.HttpContext.Request.Cookies.TryGetValue("accessToken", out string? val))
             {
                 a.Token = val;
-                
+
 
             }
             return Task.CompletedTask;
@@ -89,7 +90,47 @@ builder.Services.AddAuthentication(opts =>
 
     });
 
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Educationl_Project",
+        Description = " This Project " +
+        " Medical Service Monitoring Drivers Health in real time by day ",
+        Contact = new OpenApiContact
+        {
+            Name = "Hossam",
+            Email = "HossamHosny415@gmail.com"
+        }
+    });
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter Your JWT Key "
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Name = "Bearer",
+                In = ParameterLocation.Header
+            },
+            new List<string>()
+        }
+    });
+});
 builder.Services.AddHttpContextAccessor();
 //options =>
 //{
