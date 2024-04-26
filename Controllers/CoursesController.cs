@@ -130,23 +130,11 @@ namespace Mestar.Controllers
 
 
         [HttpGet("GetGradeOfExam")]
-        public async Task<IActionResult> GetGradeOfExam([FromBody]ExamDataDto dto)
+        public async Task<IActionResult> GetGradeOfExam(int id)
         {
 
-            var result= await unitOfWork.SolutionRepository.GetGradeOfExam(dto);
-            if(result==-1)
-            {
-                return BadRequest("AssignmentId isn't correct");
-            }
-            if(result==-2)
-            {
-                return BadRequest("You Don't Submite");
-
-            }
-            if (result==null)
-            {
-                return BadRequest("Exam not checked");
-            }
+            var result= await unitOfWork.SolutionRepository.GetAllResolvedExam(id);
+            
             return Ok(result);
         }
 
@@ -200,7 +188,9 @@ namespace Mestar.Controllers
                 }
                 await unitOfWork.CourseRepository.AddAsync(course);
                 await unitOfWork.SaveChangesAsync();
-                return Ok(dto);
+                var coursId = await unitOfWork.CourseRepository.LastCourseId();
+                var obj = new { coursId=coursId,dto=dto };
+                return Ok(obj);
 
             }
             catch
