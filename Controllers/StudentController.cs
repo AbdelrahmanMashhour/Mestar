@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryPatternWithUOW.Core.Interfaces;
 
@@ -6,6 +7,7 @@ namespace Mestar.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize(Roles = "Student")]
     public class StudentController(IUnitOfWork unitOfWork) : ControllerBase
     {
         [HttpGet("StudentProfile")]

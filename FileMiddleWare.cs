@@ -49,6 +49,8 @@ namespace Mestar
                     {
                         context.Response.StatusCode = 401;
                     }
+
+                    await next(context);
                 }
                 else
                 {

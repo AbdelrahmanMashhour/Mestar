@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryPatternWithUOW.Core.DTOs.PayProcess;
 using RepositoryPatternWithUOW.Core.Interfaces;
@@ -7,7 +8,7 @@ namespace Mestar.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
+    //[Authorize(Roles = "Admin")]
     public class PaymentController(IUnitOfWork unitOfWork) : ControllerBase
     {
         [HttpPost("AddStudentToCourse")]

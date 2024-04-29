@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,7 @@ namespace Mestar.Controllers
     [ApiController]
     public class CoursesController(IUnitOfWork unitOfWork,Mapper mapper) : ControllerBase
     {
-
+        //[Authorize(Roles = "Student")]
         [HttpGet("AllCoursesInSameStage")]
         public async Task<IActionResult> AllCoursesForStage(Stages stage)
         {
@@ -35,6 +36,8 @@ namespace Mestar.Controllers
             return Ok(courses);
 
         }
+
+        //[Authorize(Roles = "Admin")]
         [HttpGet("AllUnitesByCourseId/{id}")]
         //[Authorize]
         public async Task<IActionResult> AllUnitesByCourseIdForAdmin(int id)
@@ -47,6 +50,8 @@ namespace Mestar.Controllers
             return Ok(unites);
         }
 
+
+        //[Authorize(Roles = "Student")]
         [HttpGet("AllUnitesByCourseIdForStudent/{id}")]
         public async Task<IActionResult> AllUnitesByCourseIdForStudent(int id, int studentId)
         {
@@ -59,7 +64,7 @@ namespace Mestar.Controllers
         }
 
 
-
+        //[Authorize]
         [HttpGet("UniteById/{UniteId}")]
         public async Task<IActionResult> UniteById(int UniteId)
         {
@@ -115,7 +120,7 @@ namespace Mestar.Controllers
         //        foreach (var item in result)
         //        {
         //            retriveData.Add(new RetriveStudentInCoursDto { Email = item.Email, Id = item.UserId, StudentName = item.FirstName + " " + item.LastName });
-                    
+
 
         //        }
         //        return Ok(retriveData);
@@ -129,6 +134,8 @@ namespace Mestar.Controllers
         //}
 
 
+
+        //[Authorize]
         [HttpGet("GetGradeOfExam")]
         public async Task<IActionResult> GetGradeOfExam(int id)
         {
@@ -138,6 +145,8 @@ namespace Mestar.Controllers
             return Ok(result);
         }
 
+
+        //[Authorize(Roles ="Admin")]
         [HttpGet("AssignmentsOfStudentsToAddGrade")]
         public async Task<IActionResult> AllAssignmentsOfStudents()
         {
@@ -148,12 +157,16 @@ namespace Mestar.Controllers
         }
 
         //Admine
+
+        //[Authorize]
         [HttpGet("AllCourses")]
         public async Task<IActionResult> AllCoures()
         {
             var courses = await unitOfWork.CourseRepository.AllCoursesAsync();
             return Ok(courses);
         }
+
+        //[Authorize(Roles = "Admin")]
         [HttpPost("AddCourse")]
         public async Task<IActionResult> AddCourse([FromForm]AddCourseDto dto)
         {
@@ -201,30 +214,33 @@ namespace Mestar.Controllers
         }
 
 
-
+        //[Authorize(Roles = "Admin")]
         [HttpPost("AddUniteToCourse")]
         public async Task<IActionResult> AddUniteToCours([FromForm] UnitDto unitDto)
         {
-            var course = await unitOfWork.CourseRepository.FindAllAsync(x => x.CourseId == unitDto.CourseId);
-            if (course is null)
+
+            if (!await unitOfWork.CourseRepository.IsExist(x => x.CourseId == unitDto.CourseId))
             {
                 return BadRequest("You Don't Have Course With This Id");
             }
+
+            if (!unitDto.Vocablary.ContentType.StartsWith("video/", StringComparison.OrdinalIgnoreCase))
+                return BadRequest("Only video files are allowed");
             try
             {
-               
-                await unitOfWork.UniteRepository.AddUnitAsync(unitDto);
-                await unitOfWork.SaveChangesAsync();
-                var uniteId = await unitOfWork.UniteRepository.LastUnitId();
+
+                var uniteId = await unitOfWork.UniteRepository.AddUnitAsync(unitDto);
+
                 return Ok(uniteId);
+
             }
-            catch 
+            catch
             {
                 return BadRequest("Can't Add Unit");
             }
         }
 
-
+       // [Authorize(Roles = "Admin")]
         [HttpPost("AddAssignment")]
         public async Task<IActionResult> AddAssignment(AssignmentDto assignmentDto)
         {
@@ -241,13 +257,17 @@ namespace Mestar.Controllers
                 {
                     return BadRequest("Can't Add Assignment");
                 }
+
             }
             return BadRequest("Can't Add Assignment");
         }
 
+
+        //[Authorize(Roles = "Student")]
         [HttpPost("UploadSolution")]
-        public async Task<IActionResult> UploadSolution(SolutionDto dto)
+        public async Task<IActionResult> UploadSolution([FromForm]SolutionDto dto)
         {
+
             var result = await unitOfWork.SolutionRepository.UploadSolution(dto);
             if (result)
             {
@@ -265,6 +285,7 @@ namespace Mestar.Controllers
            return BadRequest("Can't Upload");
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpPost("GiveGrade")]
         public async Task<IActionResult> GiveGrade(GradeDto dto)
 
@@ -286,6 +307,7 @@ namespace Mestar.Controllers
             return BadRequest("Can't Give Grade To This Student");
         }
 
+        //[Authorize(Roles = "Admin")]
 
         [HttpDelete("RemoveAllCoursesInStage")]
         public async Task<IActionResult> DeleteAllCoursesInStage(Stages stage)
@@ -327,6 +349,8 @@ namespace Mestar.Controllers
         //    }
         //}
 
+
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("CourseById")]
         public async Task<IActionResult> DeleteCourseByItsId(int id)
         {
@@ -337,6 +361,7 @@ namespace Mestar.Controllers
         }
 
 
+       // [Authorize(Roles = "Admin")]
         [HttpPut("UpdateUniteById/{id}")]
         public async Task<IActionResult> UpdateUniteById(UnitDto dto,int id)
         {
@@ -345,6 +370,28 @@ namespace Mestar.Controllers
             return result ? Ok() : BadRequest();
         }
 
+
+        //[Authorize(Roles = "Admin")]
+        [HttpPatch("UpdateCourseById/{id}")]
+        public async Task<IActionResult> UpdateCourseData(JsonPatchDocument<Course> course,[FromRoute]int id)
+        {
+            var result = await unitOfWork.CourseRepository.UpdateCourse(course, id);
+
+            return result ? Ok() : BadRequest( "Can't Update");
+        }
+
+
+
+
+        [HttpGet("IsPayOrNot")]
+        public async Task<IActionResult> StudentPayOrNot(int studentId,int courseId)
+        {
+            
+
+            return await unitOfWork.StudentCourseRepository.IsPayOrNot(studentId, courseId)?Ok():NotFound();
+            
+            
+        }
 
     }
 }

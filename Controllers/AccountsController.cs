@@ -8,6 +8,7 @@ using RepositoryPatternWithUOW.Core.Interfaces;
 using RepositoryPatternWithUOW.Core.Models;
 using RepositoryPatternWithUOW.EF;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace Mestar.Controllers
 {
@@ -49,30 +50,37 @@ namespace Mestar.Controllers
             {
                 await unitOfWork.SaveChangesAsync();
 
-                SetCookie("accessToken", result.Jwt, (DateTime)result.ExpirationOfJwt);
+                SetCookie("accessToken", result.Jwt, (DateTime)result.ExpirationOfJwt,true);
 
-                SetCookie("refreshToken", result.RefreshToken, (DateTime)result.ExpirationOfRefreshToken);
+                SetCookie("refreshToken", result.RefreshToken, (DateTime)result.ExpirationOfRefreshToken,true);
+
+                SetCookie("firstName", result.FirstName, (DateTime)result.ExpirationOfRefreshToken);
+                SetCookie("lastName", result.LastName, (DateTime)result.ExpirationOfRefreshToken);
+
+                SetCookie("role", result.Role, (DateTime)result.ExpirationOfRefreshToken);
+
+                SetCookie("email", result.Email, (DateTime)result.ExpirationOfRefreshToken);
 
                 //result.RefreshToken = null;
                 //result.ExpirationOfRefreshToken = null;
                 //result.ExpirationOfJwt = null;
 
 
-                return Ok(result);
+                return Ok();
             }
             return NotFound();
         }
-        private void SetCookie(string name, string value,DateTime expiresOn)
+        private void SetCookie(string name, string value,DateTime expiresOn,bool httpOnlyValue=false)
         {
 
             var cookieOptions = new CookieOptions();
-           // cookieOptions.Secure = true;
-           cookieOptions.HttpOnly = true;
+            cookieOptions.Secure = true;//https
+            cookieOptions.HttpOnly = httpOnlyValue;
            cookieOptions.Expires = expiresOn.ToLocalTime();
-            
+
             //cookieOptions.SameSite = SameSiteMode.None;//not exit in wwwroot
-            //cookieOptions.SameSite = SameSiteMode.Strict;//wwwroot
-            
+            cookieOptions.SameSite = SameSiteMode.Strict;//wwwroot
+
 
             Response.Cookies.Append(name, value, cookieOptions);
 
@@ -83,7 +91,6 @@ namespace Mestar.Controllers
             var result = await unitOfWork.UserRepository.SendVerficationCode(sendCodeDto.Email, sendCodeDto.Reset is null ? false : true);
             if (!result)
                 return NotFound();
-            await unitOfWork.SaveChangesAsync();
             return Ok();
 
         }
@@ -181,12 +188,17 @@ namespace Mestar.Controllers
         private string ExtractEmail()
         {
             // Retrieve the JWT token from the request headers
-            var test = HttpContext.Request.Headers["Authorization"].FirstOrDefault();
-            var token=test?.Replace("Bearer ", "");
+            if (!HttpContext.Request.Cookies.TryGetValue("accessToken",out string valu))
+            {
+                return string.Empty;
+            }
+                
+            //    .Headers["Authorization"].FirstOrDefault();
+            //var token=test?.Replace("Bearer ", "");
 
             // Parse the JWT token
             var tokenHandler = new JwtSecurityTokenHandler();
-            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+            var jwtToken = tokenHandler.ReadToken(valu) as JwtSecurityToken;
 
             // Retrieve the email claim from the token
             var email = jwtToken?.Claims.FirstOrDefault(c => c.Type == "email")?.Value;
@@ -198,20 +210,51 @@ namespace Mestar.Controllers
             return email;
         }
 
+        private int ExtractId()
+        {
+            // Retrieve the JWT token from the request headers
+            if (!HttpContext.Request.Cookies.TryGetValue("accessToken", out string valu))
+            {
+                return -1;
+            }
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadToken(valu) as JwtSecurityToken;
+
+
+            var Id = jwtToken?.Payload[ClaimTypes.NameIdentifier] as int?;
+            if (Id is null)
+            {
+                return -1;
+            }
+            return (int)Id;
+        }
+
 
         [HttpPost("UpdateTokens")]
-        public async Task<IActionResult> UpdateTokens(UpdateTokensDto updateTokenDto)
+        public async Task<IActionResult> UpdateTokens(string email)
         {
             try
             {
-                var result = await unitOfWork.UserRepository.UpdateTokens(updateTokenDto);
+                if (!Request.Cookies.TryGetValue("refreshToken", out string? refreshToken))
+                {
+                    return Unauthorized();
+                }
+                
+                
+                var result = await unitOfWork.UserRepository.UpdateTokens(new UpdateTokensDto { Email=email,RefreshToken=refreshToken});
                 await unitOfWork.SaveChangesAsync();
+
                 if (!result.Success)
                 {
                     return Unauthorized();
                 }
 
-                return Ok(result);
+
+                SetCookie("accessToken", result.Jwt, (DateTime)result.ExpirationOfJwt, true);
+
+                SetCookie("refreshToken", result.RefreshToken, (DateTime)result.ExpirationOfRefreshToken, true);
+
+                return Ok();
             }
             catch
             {
@@ -224,24 +267,25 @@ namespace Mestar.Controllers
         [HttpDelete("SignOut")]
         public async Task<IActionResult> SignOut()
         {
+            if (!Request.Cookies.TryGetValue("refreshToken",out string? value))
+            {
+                return Unauthorized();
+            }
             var email = ExtractEmail();
-            
-           if( Request.Cookies.TryGetValue("refreshToken", out string? refreshToken))
-           {
-                var result = await unitOfWork.UserRepository.SignOut(refreshToken, email);
-                if (result)
-                {
-                    await unitOfWork.SaveChangesAsync();
-                    return Ok();
-                }
-                
+            var result = await unitOfWork.UserRepository.SignOut(value, email);
+            if (result)
+            {
+                //await unitOfWork.SaveChangesAsync();
+                return Ok();
+            }
 
-           }
+
             return BadRequest("Can't Get Refresh_Token");
 
 
         }
 
+        
         
     }
 }

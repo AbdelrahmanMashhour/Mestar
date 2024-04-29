@@ -13,6 +13,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Newtonsoft.Json;
 using Mestar;
+using Microsoft.AspNetCore.Http.Features;
 //using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,17 +36,21 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+builder.Services.Configure<IISServerOptions>(options =>
+{
+    options.MaxRequestBodySize = 1073741824; // 1 GB in bytes
+});
 
-builder.Services.Configure<KestrelServerOptions>(
-    options =>
-    {
-        options.Limits.MaxRequestBodySize = 104857600;
-    });
+
+
+
 
 builder.Services.AddCors(option => {
     option.AddPolicy("Policy",builder =>
     {
+
         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+
     });
 });
 
@@ -152,7 +157,7 @@ app.UseCors("Policy");
 
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseMiddleware<RedirectionMiddleware>();
 //this middleware to prevent to download videos
 app.UseMiddleware<FileMiddleWare>();
 app.UseStaticFiles();

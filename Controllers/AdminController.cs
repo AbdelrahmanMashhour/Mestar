@@ -6,7 +6,7 @@ namespace Mestar.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
-    //[Authorize(Roles = "Admin")]
+   // [Authorize(Roles = "Admin")]
     public class AdminController(IUnitOfWork unitOfWork):ControllerBase
     {
         [HttpGet("GetStudents")]
