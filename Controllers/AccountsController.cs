@@ -78,12 +78,12 @@ namespace Mestar.Controllers
         {
 
             var cookieOptions = new CookieOptions();
-            cookieOptions.Secure = false;//http
+            cookieOptions.Secure = true;//http
             cookieOptions.HttpOnly = httpOnlyValue;
             cookieOptions.Expires = expiresOn;
-
-            //cookieOptions.SameSite = SameSiteMode.None;//not exit in wwwroot
-            cookieOptions.SameSite = SameSiteMode.Strict;//wwwroot
+            
+            cookieOptions.SameSite = SameSiteMode.Strict;
+            //cookieOptions.SameSite = SameSiteMode.None;//wwwroot
 
 
             Response.Cookies.Append(name, value, cookieOptions);
@@ -268,7 +268,7 @@ namespace Mestar.Controllers
             }
             catch
             {
-                return NotFound();
+                return Unauthorized();
             }
 
         }
@@ -286,9 +286,10 @@ namespace Mestar.Controllers
             if (result)
             {
                 //await unitOfWork.SaveChangesAsync();
+            SetCookie("accessToken", "", DateTime.Now.AddDays(-1));
+            SetCookie("refreshToken", "", DateTime.Now.AddDays(-1));
                 return Ok();
             }
-
 
             return BadRequest("Can't Get Refresh_Token");
 

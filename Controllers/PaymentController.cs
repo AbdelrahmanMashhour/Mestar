@@ -33,17 +33,17 @@ namespace Mestar.Controllers
 
 
 
-        //[HttpDelete("DeleteStudentFromCourse")]
-        //public async Task<IActionResult> DeleteStudentFromCourse(PayInputDto dto)
-        //{
-        //    var result = await unitOfWork.UniteRepository.DeleteStudentToCourse(dto);
-        //    if (result != "Sucsess Process")
-        //    {
-        //        return BadRequest(result);
-        //    }
-        //    return Ok(result);
-            
+        [HttpDelete("DeleteStudentFromCourse")]
+        public async Task<IActionResult> DeleteStudentFromCourse(PayInputDto dto)
+        {
+            var result = await unitOfWork.UniteRepository.DeleteStudentToCourse(dto);
+            if (result != "Sucsess Process")
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
 
-        //}
+
+        }
     }
 }

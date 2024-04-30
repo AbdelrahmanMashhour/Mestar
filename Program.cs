@@ -49,7 +49,7 @@ builder.Services.AddCors(option => {
     option.AddPolicy("Policy",builder =>
     {
 
-        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        builder.WithOrigins("http://localhost:5173", "https://localhost:7155").AllowCredentials().AllowAnyMethod().AllowAnyHeader();
 
     });
 });

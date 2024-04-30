@@ -1,0 +1,169 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Assignments\\Txts\\84105058-710d-46b5-9947-71f39bbad185.txt",
+      "PackagePath": "staticwebassets\\Assignments\\Txts\\84105058-710d-46b5-9947-71f39bbad185.txt"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Solutions\\Pdfs\\100037e3-cc49-4812-bfff-e44303c3ec24.docx",
+      "PackagePath": "staticwebassets\\Solutions\\Pdfs\\100037e3-cc49-4812-bfff-e44303c3ec24.docx"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Solutions\\Pdfs\\197898ad-b384-4137-8a7e-9e4e13661abd.pdf",
+      "PackagePath": "staticwebassets\\Solutions\\Pdfs\\197898ad-b384-4137-8a7e-9e4e13661abd.pdf"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Solutions\\Pdfs\\22480cd9-b424-4e75-a815-0e1853c23403.pdf",
+      "PackagePath": "staticwebassets\\Solutions\\Pdfs\\22480cd9-b424-4e75-a815-0e1853c23403.pdf"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Solutions\\Pdfs\\39ea4b63-191f-49c5-a0d6-9d56c1a28973.docx",
+      "PackagePath": "staticwebassets\\Solutions\\Pdfs\\39ea4b63-191f-49c5-a0d6-9d56c1a28973.docx"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Solutions\\Pdfs\\454f32b9-3fe0-480b-926b-a1bbc70a7c50.pdf",
+      "PackagePath": "staticwebassets\\Solutions\\Pdfs\\454f32b9-3fe0-480b-926b-a1bbc70a7c50.pdf"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Solutions\\Pdfs\\8b7e0766-048b-4484-841d-45a3962978ad.docx",
+      "PackagePath": "staticwebassets\\Solutions\\Pdfs\\8b7e0766-048b-4484-841d-45a3962978ad.docx"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Solutions\\Pdfs\\e7336aa5-222b-42ea-b3bc-616a51b99501.docx",
+      "PackagePath": "staticwebassets\\Solutions\\Pdfs\\e7336aa5-222b-42ea-b3bc-616a51b99501.docx"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\Solutions\\Txts\\1d0410d3-3726-4297-b6c1-9921b1f20e1a.txt",
+      "PackagePath": "staticwebassets\\Solutions\\Txts\\1d0410d3-3726-4297-b6c1-9921b1f20e1a.txt"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\DailyMotion-fLt2veBe.js",
+      "PackagePath": "staticwebassets\\assets\\DailyMotion-fLt2veBe.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Facebook-4SbZ_Ti9.js",
+      "PackagePath": "staticwebassets\\assets\\Facebook-4SbZ_Ti9.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\FilePlayer-yGvzTk3f.js",
+      "PackagePath": "staticwebassets\\assets\\FilePlayer-yGvzTk3f.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Kaltura-So5t5ywy.js",
+      "PackagePath": "staticwebassets\\assets\\Kaltura-So5t5ywy.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Mixcloud-BZ20AmMG.js",
+      "PackagePath": "staticwebassets\\assets\\Mixcloud-BZ20AmMG.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Mux-C1ZAr4B5.js",
+      "PackagePath": "staticwebassets\\assets\\Mux-C1ZAr4B5.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Preview-BgkJGZJ9.js",
+      "PackagePath": "staticwebassets\\assets\\Preview-BgkJGZJ9.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\SoundCloud-DvHRKk-p.js",
+      "PackagePath": "staticwebassets\\assets\\SoundCloud-DvHRKk-p.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Streamable-CZTEreF7.js",
+      "PackagePath": "staticwebassets\\assets\\Streamable-CZTEreF7.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Twitch-B4ofBbTA.js",
+      "PackagePath": "staticwebassets\\assets\\Twitch-B4ofBbTA.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Vidyard-DJ6GmxF3.js",
+      "PackagePath": "staticwebassets\\assets\\Vidyard-DJ6GmxF3.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Vimeo-tCk6LDH-.js",
+      "PackagePath": "staticwebassets\\assets\\Vimeo-tCk6LDH-.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Wistia-D0FXHuTy.js",
+      "PackagePath": "staticwebassets\\assets\\Wistia-D0FXHuTy.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\YouTube-00RdWhse.js",
+      "PackagePath": "staticwebassets\\assets\\YouTube-00RdWhse.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\boy-ViuEx7F1.jpg",
+      "PackagePath": "staticwebassets\\assets\\boy-ViuEx7F1.jpg"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\card1-BY0vpoUR.jpeg",
+      "PackagePath": "staticwebassets\\assets\\card1-BY0vpoUR.jpeg"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\card2-C3P2UmxI.jpeg",
+      "PackagePath": "staticwebassets\\assets\\card2-C3P2UmxI.jpeg"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\card3-CnIgqVXw.jpeg",
+      "PackagePath": "staticwebassets\\assets\\card3-CnIgqVXw.jpeg"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\facebook-8EtCRW6Y.png",
+      "PackagePath": "staticwebassets\\assets\\facebook-8EtCRW6Y.png"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\index-B2REVc_D.js",
+      "PackagePath": "staticwebassets\\assets\\index-B2REVc_D.js"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\index-K9SjKHLB.css",
+      "PackagePath": "staticwebassets\\assets\\index-K9SjKHLB.css"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\logoforplatform-DEz-DYY0.png",
+      "PackagePath": "staticwebassets\\assets\\logoforplatform-DEz-DYY0.png"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\pageNotFound-CXMVZqgx.jpg",
+      "PackagePath": "staticwebassets\\assets\\pageNotFound-CXMVZqgx.jpg"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\profile-CHKekMIr.png",
+      "PackagePath": "staticwebassets\\assets\\profile-CHKekMIr.png"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\wattsapp-BhJPLQJk.png",
+      "PackagePath": "staticwebassets\\assets\\wattsapp-BhJPLQJk.png"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\images\\92d5aac8-a2b1-4a15-804e-73bf914228eb.jpg",
+      "PackagePath": "staticwebassets\\images\\92d5aac8-a2b1-4a15-804e-73bf914228eb.jpg"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\vite.svg",
+      "PackagePath": "staticwebassets\\vite.svg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Mestar.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Mestar.props",
+      "PackagePath": "build\\Mestar.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Mestar.props",
+      "PackagePath": "buildMultiTargeting\\Mestar.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Mestar.props",
+      "PackagePath": "buildTransitive\\Mestar.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
