@@ -19,7 +19,7 @@ namespace Mestar.Controllers
     [ApiController]
     public class CoursesController(IUnitOfWork unitOfWork,Mapper mapper) : ControllerBase
     {
-        //[Authorize(Roles = "Student")]
+        [Authorize(Roles = "Student")]
         [HttpGet("AllCoursesInSameStage")]
         public async Task<IActionResult> AllCoursesForStage(Stages stage)
         {
@@ -37,7 +37,7 @@ namespace Mestar.Controllers
 
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet("AllUnitesByCourseId/{id}")]
         //[Authorize]
         public async Task<IActionResult> AllUnitesByCourseIdForAdmin(int id)
@@ -51,7 +51,7 @@ namespace Mestar.Controllers
         }
 
 
-        //[Authorize(Roles = "Student")]
+        [Authorize(Roles = "Student")]
         [HttpGet("AllUnitesByCourseIdForStudent/{id}")]
         public async Task<IActionResult> AllUnitesByCourseIdForStudent(int id, int studentId)
         {
@@ -64,7 +64,7 @@ namespace Mestar.Controllers
         }
 
 
-        //[Authorize]
+        [Authorize]
         [HttpGet("UniteById/{UniteId}")]
         public async Task<IActionResult> UniteById(int UniteId)
         {
@@ -135,7 +135,7 @@ namespace Mestar.Controllers
 
 
 
-        //[Authorize]
+        [Authorize]
         [HttpGet("GetGradeOfExam")]
         public async Task<IActionResult> GetGradeOfExam(int id)
         {
@@ -146,7 +146,7 @@ namespace Mestar.Controllers
         }
 
 
-        //[Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Admin")]
         [HttpGet("AssignmentsOfStudentsToAddGrade")]
         public async Task<IActionResult> AllAssignmentsOfStudents()
         {
@@ -158,7 +158,7 @@ namespace Mestar.Controllers
 
         //Admine
 
-        //[Authorize]
+        [Authorize]
         [HttpGet("AllCourses")]
         public async Task<IActionResult> AllCoures()
         {
@@ -166,7 +166,7 @@ namespace Mestar.Controllers
             return Ok(courses);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddCourse")]
         public async Task<IActionResult> AddCourse([FromForm]AddCourseDto dto)
         {
@@ -214,7 +214,7 @@ namespace Mestar.Controllers
         }
 
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddUniteToCourse")]
         public async Task<IActionResult> AddUniteToCours([FromForm] UnitDto unitDto)
         {
@@ -240,7 +240,7 @@ namespace Mestar.Controllers
             }
         }
 
-       // [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddAssignment")]
         public async Task<IActionResult> AddAssignment(AssignmentDto assignmentDto)
         {
@@ -263,7 +263,7 @@ namespace Mestar.Controllers
         }
 
 
-        //[Authorize(Roles = "Student")]
+        [Authorize(Roles = "Student")]
         [HttpPost("UploadSolution")]
         public async Task<IActionResult> UploadSolution([FromForm]SolutionDto dto)
         {
@@ -285,7 +285,7 @@ namespace Mestar.Controllers
            return BadRequest("Can't Upload");
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("GiveGrade")]
         public async Task<IActionResult> GiveGrade(GradeDto dto)
 
@@ -307,7 +307,7 @@ namespace Mestar.Controllers
             return BadRequest("Can't Give Grade To This Student");
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
 
         [HttpDelete("RemoveAllCoursesInStage")]
         public async Task<IActionResult> DeleteAllCoursesInStage(Stages stage)
@@ -350,7 +350,7 @@ namespace Mestar.Controllers
         //}
 
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("CourseById")]
         public async Task<IActionResult> DeleteCourseByItsId(int id)
         {
@@ -361,7 +361,7 @@ namespace Mestar.Controllers
         }
 
 
-       // [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateUniteById/{id}")]
         public async Task<IActionResult> UpdateUniteById(UnitDto dto,int id)
         {
@@ -371,7 +371,7 @@ namespace Mestar.Controllers
         }
 
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPatch("UpdateCourseById/{id}")]
         public async Task<IActionResult> UpdateCourseData(JsonPatchDocument<Course> course,[FromRoute]int id)
         {
@@ -386,11 +386,9 @@ namespace Mestar.Controllers
         [HttpGet("IsPayOrNot")]
         public async Task<IActionResult> StudentPayOrNot(int studentId,int courseId)
         {
-            
 
             return await unitOfWork.StudentCourseRepository.IsPayOrNot(studentId, courseId)?Ok():NotFound();
-            
-            
+             
         }
 
     }

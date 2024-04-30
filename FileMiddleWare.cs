@@ -11,6 +11,7 @@ namespace Mestar
 
        public async Task InvokeAsync(HttpContext context, IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
+
             if (context.Request.Path.StartsWithSegments("/Videos")&& !context.Request.Path.StartsWithSegments("/Videos/Pdfs"))
             {
                 if (context.Request.Headers.TryGetValue("referer", out StringValues s))

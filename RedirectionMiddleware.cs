@@ -7,13 +7,36 @@
 
         public async Task InvokeAsync(HttpContext context)
         {
-            if (context.Request.Path=="/")
+            if (context.Request.Path == ("/index.html"))
+            {
+                await next(context);
+
+            }
+            else if (context.Request.Path=="/")
             {
                 context.Response.Redirect("/index.html");
             }
-            else {
+            else
+            {
                 await next(context);
             }
+            //if (context.Request.Path==("/index.html"))
+            //{
+            //    await next(context);
+
+            //}
+            //else if (context.Request.Path == ("/"))
+            //{
+            //    context.Response.Redirect("/index.html");
+            //}
+            //else if (!context.Request.Path.StartsWithSegments("/api"))
+            //{
+            //    context.Response.Redirect("/");
+            //}
+            //else 
+            //{
+            //    await next(context);
+            //}
         }
     }
 }

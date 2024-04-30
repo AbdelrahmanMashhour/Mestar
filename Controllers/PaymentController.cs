@@ -8,7 +8,7 @@ namespace Mestar.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class PaymentController(IUnitOfWork unitOfWork) : ControllerBase
     {
         [HttpPost("AddStudentToCourse")]

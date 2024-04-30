@@ -61,6 +61,10 @@ namespace Mestar.Controllers
 
                 SetCookie("email", result.Email, (DateTime)result.ExpirationOfRefreshToken);
 
+                SetCookie("id", result.Id.ToString(), (DateTime)result.ExpirationOfRefreshToken);
+
+
+
                 //result.RefreshToken = null;
                 //result.ExpirationOfRefreshToken = null;
                 //result.ExpirationOfJwt = null;
@@ -74,9 +78,9 @@ namespace Mestar.Controllers
         {
 
             var cookieOptions = new CookieOptions();
-            cookieOptions.Secure = true;//https
+            cookieOptions.Secure = false;//http
             cookieOptions.HttpOnly = httpOnlyValue;
-           cookieOptions.Expires = expiresOn.ToLocalTime();
+            cookieOptions.Expires = expiresOn;
 
             //cookieOptions.SameSite = SameSiteMode.None;//not exit in wwwroot
             cookieOptions.SameSite = SameSiteMode.Strict;//wwwroot
@@ -85,6 +89,8 @@ namespace Mestar.Controllers
             Response.Cookies.Append(name, value, cookieOptions);
 
         }
+
+
         [HttpPost("SendCode")]
         public async Task<IActionResult> SendConfirmationCode(SendCodeDto sendCodeDto)
         {
@@ -105,7 +111,8 @@ namespace Mestar.Controllers
             return Ok();
 
         }
-        //[Authorize]
+        
+
         [HttpPost("ValidateResetPasswordCode")]
         public async Task<IActionResult> ValidateResetPasswordCode(ValidationCodeDto VCD)
         {
@@ -127,6 +134,9 @@ namespace Mestar.Controllers
             await unitOfWork.SaveChangesAsync();
             return Ok();
         }
+
+
+
 
 
         [Authorize]
