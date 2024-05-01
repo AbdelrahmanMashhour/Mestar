@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NotMineProject\\Education\\Mestar\\Mestar.csproj": {}
+    "D:\\Education Front+Back\\Mestar\\Mestar.csproj": {}
   },
   "projects": {
-    "D:\\NotMineProject\\Education\\Mestar\\Mestar.csproj": {
+    "D:\\Education Front+Back\\Mestar\\Mestar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NotMineProject\\Education\\Mestar\\Mestar.csproj",
+        "projectUniqueName": "D:\\Education Front+Back\\Mestar\\Mestar.csproj",
         "projectName": "Mestar",
-        "projectPath": "D:\\NotMineProject\\Education\\Mestar\\Mestar.csproj",
-        "packagesPath": "C:\\Users\\Infotech\\.nuget\\packages\\",
-        "outputPath": "D:\\NotMineProject\\Education\\Mestar\\obj\\",
+        "projectPath": "D:\\Education Front+Back\\Mestar\\Mestar.csproj",
+        "packagesPath": "C:\\Users\\AbdElrahman\\.nuget\\packages\\",
+        "outputPath": "D:\\Education Front+Back\\Mestar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Infotech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AbdElrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
-                "projectPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
+              "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
+                "projectPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
               },
-              "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj": {
-                "projectPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj"
+              "D:\\Education Front+Back\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj": {
+                "projectPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj"
               }
             }
           }
@@ -41,11 +41,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -104,21 +99,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
+    "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj",
+        "projectUniqueName": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj",
         "projectName": "RepositoryPatternWithUOW.Core",
-        "projectPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj",
-        "packagesPath": "C:\\Users\\Infotech\\.nuget\\packages\\",
-        "outputPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\obj\\",
+        "projectPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj",
+        "packagesPath": "C:\\Users\\AbdElrahman\\.nuget\\packages\\",
+        "outputPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Infotech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AbdElrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,11 +133,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -178,21 +168,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj": {
+    "D:\\Education Front+Back\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
+        "projectUniqueName": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
         "projectName": "RepositoryPatternWithUOW.EF",
-        "projectPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
-        "packagesPath": "C:\\Users\\Infotech\\.nuget\\packages\\",
-        "outputPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.EF\\obj\\",
+        "projectPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj",
+        "packagesPath": "C:\\Users\\AbdElrahman\\.nuget\\packages\\",
+        "outputPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.EF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Infotech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AbdElrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -206,8 +196,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
-                "projectPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
+              "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
+                "projectPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
               }
             }
           }
@@ -216,11 +206,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -274,7 +259,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

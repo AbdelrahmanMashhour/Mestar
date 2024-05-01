@@ -17,7 +17,7 @@ namespace Mestar.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CoursesController(IUnitOfWork unitOfWork,Mapper mapper) : ControllerBase
+    public class CoursesController(IUnitOfWork unitOfWork,Mapper mapper,IWebHostEnvironment webHostEnvironment) : ControllerBase
     {
         [HttpGet("AllCoursesInSameStage")]
         public async Task<IActionResult> AllCoursesForStage(Stages stage)
@@ -169,45 +169,52 @@ namespace Mestar.Controllers
         [HttpPost("AddCourse")]
         public async Task<IActionResult> AddCourse([FromForm]AddCourseDto dto)
         {
+            string fileName=" ", filePath=" ";
             try
             {
-                  var course = new Course()
-                    {
-                        CourseName = dto.CourseName,
-                        CourseDescription = dto.CourseDescription,
-                        CoursePrice = dto.CoursePrice,
-                        CoursStage = dto.CoursStage,
-                        TotoalHoure = dto.TotoalHoure,
-                        AdminId = 1
-                    };
+                var course = new Course()
+                {
+                    CourseName = dto.CourseName,
+                    CourseDescription = dto.CourseDescription,
+                    CoursePrice = dto.CoursePrice,
+                    CoursStage = dto.CoursStage,
+                    TotoalHoure = dto.TotoalHoure,
+                    AdminId = 1
+                };
 
                 //$"{Request.Scheme}://{Request.Host}/{Image-Name}"
 
                 if (dto.Profile != null && dto.Profile.Length != 0)
                 {
-                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(dto.Profile.FileName);
-                    var filePath = Path.Combine("wwwroot/images", fileName);
+                    fileName = Guid.NewGuid().ToString() + Path.GetExtension(dto.Profile.FileName);
+
+                    filePath = Path.Combine(webHostEnvironment.WebRootPath, fileName);
+
+
+
 
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await dto.Profile.CopyToAsync(stream);
                     }
 
-                        
-                    course.ProfileUrl = Url.Content("~/images/" + fileName);
+
+                    course.ProfileUrl = Url.Content("/"+fileName);
 
 
                 }
+
                 await unitOfWork.CourseRepository.AddAsync(course);
                 await unitOfWork.SaveChangesAsync();
                 var coursId = await unitOfWork.CourseRepository.LastCourseId();
-                var obj = new { coursId=coursId,dto=dto };
+                var obj = new { coursId = coursId, dto = dto };
                 return Ok(obj);
 
             }
-            catch
+            catch (Exception e)
             {
-                return BadRequest("Can't Add");
+
+                return BadRequest($"{e.Message}\n fileName{fileName}\n filePath{filePath}" );
             }
 
         }

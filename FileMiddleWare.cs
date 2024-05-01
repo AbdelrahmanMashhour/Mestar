@@ -11,8 +11,8 @@ namespace Mestar
 
        public async Task InvokeAsync(HttpContext context, IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
-
-            if (context.Request.Path.StartsWithSegments("/Videos")&& !context.Request.Path.StartsWithSegments("/Videos/Pdfs"))
+            var ext = Path.GetExtension(context.Request.Path.Value);
+            if (ext!=".pdf"&&ext!=".txt"&&ext!=".docx")
             {
                 if (context.Request.Headers.TryGetValue("referer", out StringValues s))
                 {
@@ -59,7 +59,7 @@ namespace Mestar
                 }
 
             }
-            else if (context.Request.Path.Value.Contains("Txts"))
+            else if (ext ==".txt")
             {
                 context.Response.ContentType = "text/plain; charset=utf-8";
                 var path = Path.Combine(webHostEnvironment.WebRootPath, context.Request.Path.Value.TrimStart('/'));
