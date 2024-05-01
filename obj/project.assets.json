@@ -4985,19 +4985,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AbdElrahman\\.nuget\\packages\\": {}
+    "C:\\Users\\Infotech\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Education Front+Back\\Mestar\\Mestar.csproj",
+      "projectUniqueName": "D:\\NotMineProject\\Education\\Mestar\\Mestar.csproj",
       "projectName": "Mestar",
-      "projectPath": "D:\\Education Front+Back\\Mestar\\Mestar.csproj",
-      "packagesPath": "C:\\Users\\AbdElrahman\\.nuget\\packages\\",
-      "outputPath": "D:\\Education Front+Back\\Mestar\\obj\\",
+      "projectPath": "D:\\NotMineProject\\Education\\Mestar\\Mestar.csproj",
+      "packagesPath": "C:\\Users\\Infotech\\.nuget\\packages\\",
+      "outputPath": "D:\\NotMineProject\\Education\\Mestar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\AbdElrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Infotech\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5011,11 +5011,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
-              "projectPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
+            "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj": {
+              "projectPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.Core\\RepositoryPatternWithUOW.Core.csproj"
             },
-            "D:\\Education Front+Back\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj": {
-              "projectPath": "D:\\Education Front+Back\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj"
+            "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj": {
+              "projectPath": "D:\\NotMineProject\\Education\\ReposatoryPatternWithUOW.EF\\RepositoryPatternWithUOW.EF.csproj"
             }
           }
         }
@@ -5024,6 +5024,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5082,7 +5087,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

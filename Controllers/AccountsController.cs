@@ -81,7 +81,7 @@ namespace Mestar.Controllers
             cookieOptions.Secure = true;//http
             cookieOptions.HttpOnly = httpOnlyValue;
             cookieOptions.Expires = expiresOn;
-            
+
             cookieOptions.SameSite = SameSiteMode.Strict;
             //cookieOptions.SameSite = SameSiteMode.None;//wwwroot
 
@@ -141,6 +141,7 @@ namespace Mestar.Controllers
 
         [Authorize]
         [HttpPost("UpdatePassword")]
+
         public async Task<IActionResult> UpdatePassword(UpdatePasswordDto updatePasswordDto)
         {
             var email = ExtractEmail();

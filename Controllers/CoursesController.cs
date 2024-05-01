@@ -229,6 +229,7 @@ namespace Mestar.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [RequestSizeLimit(int.MaxValue)]
         [HttpPost("AddUniteToCourse")]
         public async Task<IActionResult> AddUniteToCours([FromForm] UnitDto unitDto)
         {
@@ -387,6 +388,7 @@ namespace Mestar.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [RequestSizeLimit(int.MaxValue)]
         [HttpPut("UpdateUniteById/{id}")]
         public async Task<IActionResult> UpdateUniteById(UnitDto dto,int id)
         {

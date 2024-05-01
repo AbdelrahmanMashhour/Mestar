@@ -136,6 +136,7 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+builder.Services.Configure<FormOptions>(x => { x.MultipartBodyLengthLimit = int.MaxValue; });
 builder.Services.AddHttpContextAccessor();
 //options =>
 //{
@@ -159,7 +160,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<RedirectionMiddleware>();
 //this middleware to prevent to download videos
-//app.UseMiddleware<FileMiddleWare>();
+app.UseMiddleware<FileMiddleWare>();
 app.UseStaticFiles();
 app.MapControllers();
 

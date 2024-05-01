@@ -378,6 +378,22 @@
   },
   {
     "ContainingType": "Mestar.Controllers.CoursesController",
+    "Method": "AllStudentsInCoursBy",
+    "RelativePath": "api/Courses/AllStudentsInCoursById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mestar.Controllers.CoursesController",
     "Method": "AllUnitesByCourseIdForAdmin",
     "RelativePath": "api/Courses/AllUnitesByCourseId/{id}",
     "HttpMethod": "GET",
