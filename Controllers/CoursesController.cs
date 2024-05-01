@@ -165,6 +165,14 @@ namespace Mestar.Controllers
             return Ok(courses);
         }
 
+
+        [HttpGet("AllStudentsInCoursById/{id}")]
+        public async Task<IActionResult> AllStudentsInCoursBy(int id)
+        {
+            var result= await unitOfWork.StudentCourseRepository.GetStudenPaymentByCourseId(id);
+            return Ok(result);
+        }
+
         [Authorize(Roles = "Admin")]
         [HttpPost("AddCourse")]
         public async Task<IActionResult> AddCourse([FromForm]AddCourseDto dto)

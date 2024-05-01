@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FFU53C6BhxKHCOFfaBXVa8tHnDBClpSsCF5ZIwTQ3nY=",
+  "Hash": "6G2R200GQkOMr0AmNSmaBiGa9nB5He82/wBO/0j36DI=",
   "Source": "Mestar",
   "BasePath": "_content/Mestar",
   "Mode": "Default",
@@ -93,12 +93,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\card3-CnIgqVXw.jpeg"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\DailyMotion-CVSzlrc-.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\DailyMotion-B61UUGGK.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/DailyMotion-CVSzlrc-.js",
+      "RelativePath": "assets/DailyMotion-B61UUGGK.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,7 +109,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\DailyMotion-CVSzlrc-.js"
+      "OriginalItemSpec": "wwwroot\\assets\\DailyMotion-B61UUGGK.js"
     },
     {
       "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\facebook-8EtCRW6Y.png",
@@ -131,12 +131,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\facebook-8EtCRW6Y.png"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Facebook-BpN5HPjO.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Facebook-DxVTUG12.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Facebook-BpN5HPjO.js",
+      "RelativePath": "assets/Facebook-DxVTUG12.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,15 +147,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Facebook-BpN5HPjO.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Facebook-DxVTUG12.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\FilePlayer-9ZfkYk_r.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\FilePlayer-CRkkjvRp.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/FilePlayer-9ZfkYk_r.js",
+      "RelativePath": "assets/FilePlayer-CRkkjvRp.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,15 +166,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\FilePlayer-9ZfkYk_r.js"
+      "OriginalItemSpec": "wwwroot\\assets\\FilePlayer-CRkkjvRp.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\index-CM4ZlX20.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\index-IBaRVgmS.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/index-CM4ZlX20.js",
+      "RelativePath": "assets/index-IBaRVgmS.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,15 +185,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-CM4ZlX20.js"
+      "OriginalItemSpec": "wwwroot\\assets\\index-IBaRVgmS.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\index-K9SjKHLB.css",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\index-sPg5i0Wj.css",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/index-K9SjKHLB.css",
+      "RelativePath": "assets/index-sPg5i0Wj.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -204,15 +204,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-K9SjKHLB.css"
+      "OriginalItemSpec": "wwwroot\\assets\\index-sPg5i0Wj.css"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Kaltura-CxoAInrL.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Kaltura-DAcM_JR0.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Kaltura-CxoAInrL.js",
+      "RelativePath": "assets/Kaltura-DAcM_JR0.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -223,7 +223,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Kaltura-CxoAInrL.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Kaltura-DAcM_JR0.js"
     },
     {
       "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\logoforplatform-DEz-DYY0.png",
@@ -245,12 +245,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\logoforplatform-DEz-DYY0.png"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Mixcloud-B9WuXZO7.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Mixcloud-Bxsb5hxX.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Mixcloud-B9WuXZO7.js",
+      "RelativePath": "assets/Mixcloud-Bxsb5hxX.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -261,15 +261,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Mixcloud-B9WuXZO7.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Mixcloud-Bxsb5hxX.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Mux-BIxttM1K.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Mux-C7dLoFla.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Mux-BIxttM1K.js",
+      "RelativePath": "assets/Mux-C7dLoFla.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -280,7 +280,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Mux-BIxttM1K.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Mux-C7dLoFla.js"
     },
     {
       "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\pageNotFound-CXMVZqgx.jpg",
@@ -302,12 +302,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\pageNotFound-CXMVZqgx.jpg"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Preview-GOcLhjDx.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Preview-DQMK0L9r.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Preview-GOcLhjDx.js",
+      "RelativePath": "assets/Preview-DQMK0L9r.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -318,7 +318,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Preview-GOcLhjDx.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Preview-DQMK0L9r.js"
     },
     {
       "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\profile-CHKekMIr.png",
@@ -340,12 +340,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\profile-CHKekMIr.png"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\SoundCloud-lFo8clLU.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\SoundCloud-BJ1UDhbf.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/SoundCloud-lFo8clLU.js",
+      "RelativePath": "assets/SoundCloud-BJ1UDhbf.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -356,15 +356,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\SoundCloud-lFo8clLU.js"
+      "OriginalItemSpec": "wwwroot\\assets\\SoundCloud-BJ1UDhbf.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Streamable-Cy5HJZl3.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Streamable-fV2mZuCn.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Streamable-Cy5HJZl3.js",
+      "RelativePath": "assets/Streamable-fV2mZuCn.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -375,15 +375,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Streamable-Cy5HJZl3.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Streamable-fV2mZuCn.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Twitch-1wSkz42H.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Twitch-BCDdPNto.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Twitch-1wSkz42H.js",
+      "RelativePath": "assets/Twitch-BCDdPNto.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -394,15 +394,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Twitch-1wSkz42H.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Twitch-BCDdPNto.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Vidyard-2UKFGmsz.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Vidyard-1dzWh0Hn.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Vidyard-2UKFGmsz.js",
+      "RelativePath": "assets/Vidyard-1dzWh0Hn.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -413,15 +413,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Vidyard-2UKFGmsz.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Vidyard-1dzWh0Hn.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Vimeo-DbqEDZmQ.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Vimeo-OBZpulgw.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Vimeo-DbqEDZmQ.js",
+      "RelativePath": "assets/Vimeo-OBZpulgw.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -432,7 +432,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Vimeo-DbqEDZmQ.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Vimeo-OBZpulgw.js"
     },
     {
       "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\wattsapp-BhJPLQJk.png",
@@ -454,12 +454,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\wattsapp-BhJPLQJk.png"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Wistia-C52AjAbG.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\Wistia-DdaeKTSz.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/Wistia-C52AjAbG.js",
+      "RelativePath": "assets/Wistia-DdaeKTSz.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -470,15 +470,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\Wistia-C52AjAbG.js"
+      "OriginalItemSpec": "wwwroot\\assets\\Wistia-DdaeKTSz.js"
     },
     {
-      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\YouTube-BNNv8Fnk.js",
+      "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\assets\\YouTube-B7A24ZH4.js",
       "SourceId": "Mestar",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Education Front+Back\\Mestar\\wwwroot\\",
       "BasePath": "_content/Mestar",
-      "RelativePath": "assets/YouTube-BNNv8Fnk.js",
+      "RelativePath": "assets/YouTube-B7A24ZH4.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -489,7 +489,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\YouTube-BNNv8Fnk.js"
+      "OriginalItemSpec": "wwwroot\\assets\\YouTube-B7A24ZH4.js"
     },
     {
       "Identity": "D:\\Education Front+Back\\Mestar\\wwwroot\\index.html",
