@@ -27,6 +27,7 @@ namespace Mestar.Controllers
             //$"{Request.Scheme}://{Request.Host}/{Image-Name}"
             foreach (var course in courses)
             {
+
                 if (course.ProfileUrl!=null)
                 {
                     course.ProfileUrl = $"{Request.Scheme}://{Request.Host}{course.ProfileUrl}";

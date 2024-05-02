@@ -42,8 +42,7 @@ namespace Mestar.Controllers
         {
             var result = await unitOfWork.UserRepository.LoginAsync(loginDto);
 
-            if (result.Success&&(result.EmailConfirmed==false))
-              return BadRequest("Your Email Not Conformed");
+          
 
 
             if (result.Success&&result.EmailConfirmed)
@@ -72,6 +71,10 @@ namespace Mestar.Controllers
 
                 return Ok();
             }
+            else if(result.Success &&!result.EmailConfirmed) {
+                
+                return Ok(result);
+            }
             return NotFound();
         }
         private void SetCookie(string name, string value,DateTime expiresOn,bool httpOnlyValue=false)
@@ -82,8 +85,8 @@ namespace Mestar.Controllers
             cookieOptions.HttpOnly = httpOnlyValue;
             cookieOptions.Expires = expiresOn;
 
-            cookieOptions.SameSite = SameSiteMode.Strict;
-            //cookieOptions.SameSite = SameSiteMode.None;//wwwroot
+            //cookieOptions.SameSite = SameSiteMode.Strict;
+            cookieOptions.SameSite = SameSiteMode.None;//wwwroot
 
 
             Response.Cookies.Append(name, value, cookieOptions);
@@ -94,9 +97,12 @@ namespace Mestar.Controllers
         [HttpPost("SendCode")]
         public async Task<IActionResult> SendConfirmationCode(SendCodeDto sendCodeDto)
         {
-            var result = await unitOfWork.UserRepository.SendVerficationCode(sendCodeDto.Email, sendCodeDto.Reset is null ? false : true);
-            if (!result)
+            var result = await unitOfWork.UserRepository.SendVerficationCode(sendCodeDto.Email, sendCodeDto.Reset is null or false ? false : true);
+            if (result is null)
                 return NotFound();
+            else if (result == "sent")
+                return Ok();
+            SetCookie("identityToken", result, DateTime.Now.AddMinutes(25), true);
             return Ok();
 
         }
@@ -104,10 +110,13 @@ namespace Mestar.Controllers
         [HttpPost("ValidateEmailVerificationCode")]
         public async Task<IActionResult> ValidateConfirmationCode(ValidationCodeDto VCD)
         {
-            var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email, VCD.Code);
+            if(!Request.Cookies.TryGetValue("identityToken",out string? val))
+                return Forbid();
+            var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email,val, VCD.Code);
             await unitOfWork.SaveChangesAsync();
             if (!result)
                 return Forbid();
+            SetCookie("identityToken","",DateTime.Now.AddHours(-12), true);
             return Ok();
 
         }
@@ -116,7 +125,9 @@ namespace Mestar.Controllers
         [HttpPost("ValidateResetPasswordCode")]
         public async Task<IActionResult> ValidateResetPasswordCode(ValidationCodeDto VCD)
         {
-            var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email, VCD.Code, true);
+            if (!Request.Cookies.TryGetValue("identityToken", out string? val))
+                return Forbid();
+            var result = await unitOfWork.UserRepository.ValidateCode(VCD.Email,val, VCD.Code, true);
             await unitOfWork.SaveChangesAsync();
             if (!result)
                 return Forbid();
@@ -128,7 +139,10 @@ namespace Mestar.Controllers
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
         {
-            var result = await unitOfWork.UserRepository.ResetPassword(resetPasswordDto);
+            if (!Request.Cookies.TryGetValue("identityToken", out string? val))
+                return Forbid();
+
+            var result = await unitOfWork.UserRepository.ResetPassword(resetPasswordDto,val);
             if (!result)
                 return BadRequest();
             await unitOfWork.SaveChangesAsync();

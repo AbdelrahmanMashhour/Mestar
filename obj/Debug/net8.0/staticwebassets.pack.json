@@ -1,64 +1,60 @@
 {
   "Files": [
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\872785fc-544e-4aa2-bcf1-aedc337fa527.mp4",
-      "PackagePath": "staticwebassets\\872785fc-544e-4aa2-bcf1-aedc337fa527.mp4"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\DailyMotion-WZHNB01A.js",
+      "PackagePath": "staticwebassets\\assets\\DailyMotion-WZHNB01A.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\DailyMotion-DPt8PxGr.js",
-      "PackagePath": "staticwebassets\\assets\\DailyMotion-DPt8PxGr.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Facebook-Dl0wkrf7.js",
+      "PackagePath": "staticwebassets\\assets\\Facebook-Dl0wkrf7.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Facebook-DHsWkz9l.js",
-      "PackagePath": "staticwebassets\\assets\\Facebook-DHsWkz9l.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\FilePlayer-SPY6y4kp.js",
+      "PackagePath": "staticwebassets\\assets\\FilePlayer-SPY6y4kp.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\FilePlayer-kKV42mSf.js",
-      "PackagePath": "staticwebassets\\assets\\FilePlayer-kKV42mSf.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Kaltura-FO7X2b5V.js",
+      "PackagePath": "staticwebassets\\assets\\Kaltura-FO7X2b5V.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Kaltura-BQFhkF-0.js",
-      "PackagePath": "staticwebassets\\assets\\Kaltura-BQFhkF-0.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Mixcloud-CkruM3VA.js",
+      "PackagePath": "staticwebassets\\assets\\Mixcloud-CkruM3VA.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Mixcloud-C49FIMIU.js",
-      "PackagePath": "staticwebassets\\assets\\Mixcloud-C49FIMIU.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Mux-CR4jdaF1.js",
+      "PackagePath": "staticwebassets\\assets\\Mux-CR4jdaF1.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Mux-D58MELKK.js",
-      "PackagePath": "staticwebassets\\assets\\Mux-D58MELKK.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Preview-Bsrc4GTd.js",
+      "PackagePath": "staticwebassets\\assets\\Preview-Bsrc4GTd.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Preview-C6FtIi27.js",
-      "PackagePath": "staticwebassets\\assets\\Preview-C6FtIi27.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\SoundCloud-ND_HMWuK.js",
+      "PackagePath": "staticwebassets\\assets\\SoundCloud-ND_HMWuK.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\SoundCloud-CJKNgspW.js",
-      "PackagePath": "staticwebassets\\assets\\SoundCloud-CJKNgspW.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Streamable-1LP3jgPU.js",
+      "PackagePath": "staticwebassets\\assets\\Streamable-1LP3jgPU.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Streamable-CgTHUlO_.js",
-      "PackagePath": "staticwebassets\\assets\\Streamable-CgTHUlO_.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Twitch-COccF-4s.js",
+      "PackagePath": "staticwebassets\\assets\\Twitch-COccF-4s.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Twitch-Cbtcj5wf.js",
-      "PackagePath": "staticwebassets\\assets\\Twitch-Cbtcj5wf.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Vidyard-iI4sQWei.js",
+      "PackagePath": "staticwebassets\\assets\\Vidyard-iI4sQWei.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Vidyard-CtNqcgDn.js",
-      "PackagePath": "staticwebassets\\assets\\Vidyard-CtNqcgDn.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Vimeo-Dy7speY1.js",
+      "PackagePath": "staticwebassets\\assets\\Vimeo-Dy7speY1.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Vimeo-BpOzF0uU.js",
-      "PackagePath": "staticwebassets\\assets\\Vimeo-BpOzF0uU.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Wistia-C-VMPhkd.js",
+      "PackagePath": "staticwebassets\\assets\\Wistia-C-VMPhkd.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\Wistia-DdY24xlo.js",
-      "PackagePath": "staticwebassets\\assets\\Wistia-DdY24xlo.js"
-    },
-    {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\YouTube-BA5v970e.js",
-      "PackagePath": "staticwebassets\\assets\\YouTube-BA5v970e.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\YouTube-NyyLKrib.js",
+      "PackagePath": "staticwebassets\\assets\\YouTube-NyyLKrib.js"
     },
     {
       "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\boy-ViuEx7F1.jpg",
@@ -81,12 +77,12 @@
       "PackagePath": "staticwebassets\\assets\\facebook-8EtCRW6Y.png"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\index-DQfYxFU8.js",
-      "PackagePath": "staticwebassets\\assets\\index-DQfYxFU8.js"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\index-BNyoX2iQ.js",
+      "PackagePath": "staticwebassets\\assets\\index-BNyoX2iQ.js"
     },
     {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\index-sPg5i0Wj.css",
-      "PackagePath": "staticwebassets\\assets\\index-sPg5i0Wj.css"
+      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\index-Pvk5UjBP.css",
+      "PackagePath": "staticwebassets\\assets\\index-Pvk5UjBP.css"
     },
     {
       "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\logoforplatform-DEz-DYY0.png",
@@ -103,18 +99,6 @@
     {
       "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\assets\\wattsapp-BhJPLQJk.png",
       "PackagePath": "staticwebassets\\assets\\wattsapp-BhJPLQJk.png"
-    },
-    {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\b5bbf144-d4d4-4276-afdb-f65d36298d7c.txt",
-      "PackagePath": "staticwebassets\\b5bbf144-d4d4-4276-afdb-f65d36298d7c.txt"
-    },
-    {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\c76f3652-ed04-4c62-aae0-aa64107d0cd7.jpg",
-      "PackagePath": "staticwebassets\\c76f3652-ed04-4c62-aae0-aa64107d0cd7.jpg"
-    },
-    {
-      "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\e09b6bb3-7b0d-4f74-8103-3919f57396c3.txt",
-      "PackagePath": "staticwebassets\\e09b6bb3-7b0d-4f74-8103-3919f57396c3.txt"
     },
     {
       "Id": "D:\\NotMineProject\\Education\\Mestar\\wwwroot\\index.html",
