@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mestar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66382edb3da5378b2396385b517a77e323f0b617")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10643161597b6c4592292209eb5ab5761a3fb9d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mestar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mestar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

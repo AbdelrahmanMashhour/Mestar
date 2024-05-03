@@ -85,8 +85,8 @@ namespace Mestar.Controllers
             cookieOptions.HttpOnly = httpOnlyValue;
             cookieOptions.Expires = expiresOn;
 
-            //cookieOptions.SameSite = SameSiteMode.Strict;
-            cookieOptions.SameSite = SameSiteMode.None;//wwwroot
+            cookieOptions.SameSite = SameSiteMode.Strict;
+            //cookieOptions.SameSite = SameSiteMode.None;//wwwroot
 
 
             Response.Cookies.Append(name, value, cookieOptions);

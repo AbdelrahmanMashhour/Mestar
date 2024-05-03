@@ -24,9 +24,9 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 builder.Services.Configure<TokenOptionsPattern>(builder.Configuration.GetSection("JWT"));
 
 builder.Services.AddControllers().AddNewtonsoftJson(o=>o.SerializerSettings.NullValueHandling=NullValueHandling.Ignore);
-    
-    //AddJsonOptions(x => x.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull);
 
+//AddJsonOptions(x => x.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull);
+builder.Services.AddSignalR();
 builder.Services.AddScoped<Mapper>();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
@@ -156,6 +156,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("Policy");
 
+app.MapHub<MainHub>("main");
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<RedirectionMiddleware>();
